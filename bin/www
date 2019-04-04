@@ -7,7 +7,8 @@
 var app = require('../app');
 var debug = require('debug')('node-course:server');
 var http = require('http');
-
+// Pass true to env() to make it use the current environment stage.
+require('custom-env').env(true);
 /**
  * Get port from environment and store in Express.
  */
@@ -87,4 +88,5 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
+  console.log(`API running on ${process.env.NODE_ENV} environment on port ${port}`);
 }
