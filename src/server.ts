@@ -87,5 +87,7 @@ function onListening() {
         : 'port ' + addr.port;
     debug('Listening on ' + bind);
     console.log(`API running on ${process.env.NODE_ENV} environment on port ${port}`);
+    // access current .env file properties
+    console.log(process.env.APP_NAME)
 }
 export default server;
