@@ -1,9 +1,11 @@
 // Pass true to env() to make it use the current environment stage.
 require('custom-env').env(true);
-var debug = require('debug')('node-course:server');
-
 import * as http from "http";
 import app from "./app";
+// discourage a casual exploit, to determine an app is running Express.
+app.disable('x-powered-by');
+
+var debug = require('debug')('node-course:server');
 
 /**
  * Get port from environment and store in Express.
