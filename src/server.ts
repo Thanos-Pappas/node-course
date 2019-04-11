@@ -4,7 +4,8 @@ import * as http from "http";
 import app from "./app";
 // discourage a casual exploit, to determine an app is running Express.
 app.disable('x-powered-by');
-
+// use config
+const config = require('config');
 var debug = require('debug')('node-course:server');
 
 /**
@@ -88,6 +89,8 @@ function onListening() {
     debug('Listening on ' + bind);
     console.log(`API running on ${process.env.NODE_ENV} environment on port ${port}`);
     // access current .env file properties
-    console.log(process.env.APP_NAME)
+    console.log(process.env.APP_NAME);
+    // In config file the property is mapped to the environment variable
+    console.log( "Database password: " + process.env[(config.get('database.password'))]);
 }
 export default server;

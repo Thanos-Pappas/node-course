@@ -3,10 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "win_start_dev": "set NODE_ENV=localhost&& npm run start",
+    "win_start_localhost": "set NODE_ENV=localhost& set APP_DB_PASSWORD=Abc1234&& npm run start",
     "start": "nodemon --exec ./node_modules/.bin/ts-node -- ./src/server.ts"
   },
   "dependencies": {
+    "config": "^3.1.0",
     "cookie-parser": "~1.4.3",
     "custom-env": "^1.0.0",
     "debug": "~2.6.9",
