@@ -90,10 +90,10 @@ function onListening() {
         ? 'pipe ' + addr
         : 'port ' + addr.port;
     debug('Listening on ' + bind);
-    console.log(`API running on ${process.env.NODE_ENV} environment on port ${port}`);
+    debug(`API running on ${process.env.NODE_ENV} environment on port ${port}`);
     // access current .env file properties
-    console.log(process.env.APP_NAME);
+    debug(process.env.APP_NAME);
     // In config file the property is mapped to the environment variable
-    console.log( "Database password: " + config.get('database.password'));
+    debug( "Database password: " + config.get('database.password'));
 }
 export default server;

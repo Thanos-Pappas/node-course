@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "win_start_localhost": "set NODE_ENV=localhost& set APP_DB_PASSWORD=Abc1234&& npm run start",
+    "win_start_localhost": "set DEBUG=node-course:*& set NODE_ENV=localhost& set APP_DB_PASSWORD=Abc1234&& npm run start",
     "start": "nodemon --exec ./node_modules/.bin/ts-node -- ./src/server.ts"
   },
   "dependencies": {
