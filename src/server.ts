@@ -1,11 +1,14 @@
-// Pass true to env() to make it use the current environment stage.
-require('custom-env').env(true);
 import * as http from "http";
 import app from "./app";
-// discourage a casual exploit, to determine an app is running Express.
-app.disable('x-powered-by');
+
+// Pass true to env() to make it use the current environment stage.
+require('custom-env').env(true);
 // use config
 const config = require('config');
+
+// discourage a casual exploit, to determine an app is running Express.
+app.disable('x-powered-by');
+
 var debug = require('debug')('node-course:server');
 
 /**
@@ -91,6 +94,6 @@ function onListening() {
     // access current .env file properties
     console.log(process.env.APP_NAME);
     // In config file the property is mapped to the environment variable
-    console.log( "Database password: " + process.env[(config.get('database.password'))]);
+    console.log( "Database password: " + config.get('database.password'));
 }
 export default server;

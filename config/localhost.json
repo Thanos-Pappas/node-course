@@ -1,5 +1,5 @@
 {
-  "database": {
-    "password": "APP_DB_PASSWORD"
+  "app": {
+    "name": "Hands on Node.js - Localhost"
   }
 }
